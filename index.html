@@ -111,59 +111,57 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form role="form" method="post" name="personForm" ng-submit="submitForm()">
+                    <form role="form" method="post" name="personForm" ng-submit="submitForm()" novalidate>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>الاسم</label>
-                                <input type="text" class="form-control" placeholder="الاسم" name="nom" ng-model="person.nom" ng-minlength="3" ng-maxlength="100" placeholder=" Votre prénom" required>
+                                <input type="text" class="form-control" placeholder=" الاسم العائلي" name="nom" ng-model="person.nom" ng-minlength="3" ng-maxlength="100" placeholder=" Votre prénom" required>
                                 <div class="help-block" ng-messages="personForm.nom.$error" ng-show="personForm.nom.$touched">
-                                    <p class="text-danger" ng-message="required">Le champ est requis</p>
-                                    <p class="text-danger" ng-message="minlength">This field is too short</p>
-                                    <p class="text-danger" ng-message="maxlength">This field is too long</p>
+                                    <p class="text-danger" ng-message="required"> المرجو ادخال اسمك العائلي</p>
+                                    <p class="text-danger" ng-message="minlength">المرجو ادخال اسم مناسب</p>
+                                    <p class="text-danger" ng-message="maxlength">المرجو ادخال اسم مناسب</p>
                               </div>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>الاسم</label>
-                                <input type="text" class="form-control" placeholder="الاسم" name="prenom" ng-model="person.prenom" ng-minlength="3" ng-maxlength="100" placeholder=" Votre prénom" required>
+                                <input type="text" class="form-control" placeholder="الاسم الشخصي" name="prenom" ng-model="person.prenom" ng-minlength="3" ng-maxlength="100" placeholder=" Votre prénom" required />
                                 <div class="help-block" ng-messages="personForm.prenom.$error" ng-show="personForm.prenom.$touched">
-                                    <p class="text-danger" ng-message="required">Le champ est requis</p>
-                                    <p class="text-danger" ng-message="minlength">This field is too short</p>
-                                    <p class="text-danger" ng-message="maxlength">This field is too long</p>
+                                    <p class="text-danger" ng-message="required">المرجو ادخال اسمك الشخصي</p>
+                                    <p class="text-danger" ng-message="minlength">المرجو ادخال اسم مناسب</p>
+                                    <p class="text-danger" ng-message="maxlength">المرجو ادخال اسم مناسب</p>
                               </div>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>البريد الالكتروني</label>
-                                <input type="email" class="form-control" placeholder="البريد الالكتروني" id="email" type="email" name="email" ng-model="person.email" ng-minlength="8" ng-maxlength="100" placeholder="Votre Email" required>
+                                <input type="email" class="form-control" placeholder="البريد الالكتروني" id="email" type="email" name="email" ng-model="person.email" ng-minlength="8" ng-maxlength="100" placeholder="Votre Email" required />
                                 <div class="help-block" ng-messages="personForm.email.$error" ng-show="personForm.email.$touched">
-                                    <p class="text-danger" ng-message="required">This field is required</p>
-                                    <p class="text-danger" ng-message="minlength">This field is too short</p>
-                                    <p class="text-danger" ng-message="maxlength">This field is too long</p>
+                                    <p class="text-danger" ng-message="required">المرجو ادخال بريدك الالكتروني</p>
+                                    <p class="text-danger" ng-message="minlength"> المرجو ادخال بريدك الكتروني مناسب</p>
+                                    <p class="text-danger" ng-message="maxlength"> المرجو ادخال بريدك الكتروني مناسب </p>
                                 </div>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>رقم الهاتف</label>
-                                <input type="tel" class="form-control" placeholder="رقم الهاتف" id="phone-number" type="text" name="tel" ng-model="person.tel" ng-minlength="10" ng-maxlength="14" placeholder="Votre téléphone" required>
+                                <input type="tel" class="form-control" placeholder="رقم الهاتف" id="phone-number" type="text" name="tel" ng-model="person.tel" ng-minlength="10" ng-maxlength="14" placeholder="Votre téléphone" required />
                                 <div class="help-block" ng-messages="personForm.tel.$error" ng-show="personForm.tel.$touched">
-                                  <p class="text-danger" ng-message="required">This field is required</p>
-                                  <p class="text-danger" ng-message="minlength">This field is too short</p>
-                                  <p class="text-danger" ng-message="maxlength">This field is too long</p>
+                                  <p class="text-danger" ng-message="required">المرجو ادخال رقم هاتفك</p>
+                                  <p class="text-danger" ng-message="minlength">رقم هاتفك غير صالح</p>
+                                  <p class="text-danger" ng-message="maxlength">رقم هاتفك غير صالح</p>
                                 </div>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>العمر</label>
-                                <input type="text" class="form-control" placeholder="العمر" name="age" id="age" ng-model="person.age" required>
+                                <input type="text" class="form-control" placeholder="العمر" name="age" id="age" ng-model="person.age" required />
                                 <div class="help-block" ng-messages="personForm.age.$error" ng-show="personForm.age.$touched">
-                                  <p class="text-danger" ng-message="required">This field is required</p>
-                                  <p class="text-danger" ng-message="minlength">This field is too short</p>
-                                  <p class="text-danger" ng-message="maxlength">This field is too long</p>
+                                  <p class="text-danger" ng-message="required"> المرجو ادخال عمرك</p>
                                 </div>
                             </div>
                         </div>
@@ -171,7 +169,7 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>المهنة</label>
-                                <input list="browsers" class="form-control" placeholder="المهنة" name="emploi" id="emploi" ng-model="person.emploi" required>
+                                <input list="browsers" class="form-control" placeholder="المهنة" name="emploi" id="emploi" ng-model="person.emploi" required />
                                   <datalist id="browsers"  id="emploi">
                                       <option value="سائق">
                   									  <option value="(مربي(ة">
@@ -185,7 +183,7 @@
                   									  <option value="خياط(ة)">
                                   </datalist>
                               <div class="help-block" ng-messages="personForm.emploi.$error" ng-show="personForm.emploi.$touched">
-                                  <p class="text-danger" ng-message="required">You Must choose one</p>
+                                  <p class="text-danger" ng-message="required">اختر مهنتك</p>
                                 </div>
                             </div>
                         </div>
@@ -193,11 +191,11 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>المدينة</label>
-                                <input rows="5" class="form-control" placeholder="المدينة" name="ville" id="ville" ng-model="person.ville" required >
+                                <input rows="5" class="form-control" placeholder="المدينة" name="ville" id="ville" ng-model="person.ville"  required />
                                 <div class="help-block" ng-messages="personForm.ville.$error" ng-show="personForm.ville.$touched">
-                                  <p class="text-danger" ng-message="required">This field is required</p>
-                                  <p class="text-danger" ng-message="minlength">This field is too short</p>
-                                  <p class="text-danger" ng-message="maxlength">This field is too long</p>
+                                  <p class="text-danger" ng-message="required">المرجو ادخال مدينتك</p>
+                                  <p class="text-danger" ng-message="minlength">اسم مدينتك قصير</p>
+                                  <p class="text-danger" ng-message="maxlength">اسم مدينتك طويل جدا</p>
                                 </div>
                             </div>
                         </div>
