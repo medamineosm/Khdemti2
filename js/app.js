@@ -6,10 +6,12 @@ function MainCtrl($scope, $http, $window) {
   // create a blank object to handle form data.
   $scope.user = {};
   // calling our submit function.
-  $scope.submitForm = function() {
+  $scope.submitForm = function(isValid) {
     // Posting data to php file
-    console.log($scope.personForm);
-    $http({
+    if (isValid) {
+      console.log('form is valid');
+
+      $http({
          method  : 'POST',
          url     : 'inc/insert.php',
          data    : $scope.personForm, //forms user object
@@ -28,5 +30,6 @@ function MainCtrl($scope, $http, $window) {
             }
         });
       };
-
     }
+
+  }
